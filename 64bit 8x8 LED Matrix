@@ -1,0 +1,17 @@
+#include <FastLED.h>
+#define HEIGHT 8
+#define WIDTH 8
+#define NUM_LEDS HEIGHT*WIDTH
+#define DATA_PIN 2
+
+CRGB leds[NUM_LEDS];
+
+void setup() {
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); 
+}
+
+void loop() {
+  fill_solid(leds, NUM_LEDS, CRGB::Red);
+  FastLED.show();
+  delay(30);
+}
